@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <line-chart id="foo"></line-chart>
+    <horizontal-bars id="bars"></horizontal-bars>
+    <bar-chart id="barchart"></bar-chart>
+
+    <script src="./line_chart.js"></script>
+    <script>
+      const data = {
+        datasets : [
+          { label: "foo", points: [2, 3, 4]},
+          { label: "bar", points: [3, 6, 7]}
+        ],
+        xlabels : [ "april", "may", "june" ]
+      }
+      document.getElementById("foo").setData(data, "xlabel", "ylabel");
+
+      document.getElementById('bars').setData([
+        	{name: 'foo', count: 500},
+        	{name: 'bar', count: 100},
+        	{name: 'baz', count: 300},
+        	{name: 'qux', count: 400},
+			]);
+
+      document.getElementById('barchart').setData([
+        {label: "foo", num: 100},
+        {label: "bar", num: 200}
+        ], "xlabel", "ylabel");
+    </script>
+  </body>
+</html>
